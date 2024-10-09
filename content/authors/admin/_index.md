@@ -103,7 +103,7 @@ work:
     company_url: ''
     company_logo: ''
     date_start: 2020-09-01
-    date_end: 2021-02-31
+    date_end: 2021-02-28
     summary: |
       Misson include:
       - In the Radar Embedded Processing Department, development in Python to create a VHDL library, an XML file to drive the registers, C code for the DSP (Digital Signal Processing) team & a documentation in Word regarding the registers in the VHDL library
