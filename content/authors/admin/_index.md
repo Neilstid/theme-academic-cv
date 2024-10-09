@@ -148,8 +148,8 @@ languages:
 
 ## About Me
 
+<p align=justify>
 I am Neil FARMER a Ph.D candidate in Artificial Intelligence at CentraleSupelec & Chanel. My research interests focus on disentangled image editing using Generative Adversarial Networks, particularly for editing signs of aging.
 
 Prior to that, I studied Computer Science at Technology University of Belfort-Montbéliard (UTBM) where I graduated in 2022. My specializations during engineering school were Artificial intelligence [1], Software and knowledge engineering [2].
-
-{style="text-align: justify;"}
+</p>
