@@ -101,10 +101,6 @@ skills:
         description: ''
         percent: 100
         icon: devicon/python
-      - name: Pytorch
-        description: ''
-        percent: 100
-        icon: devicon/pytorch
       - name: Java
         description: ''
         percent: 75
@@ -127,11 +123,6 @@ skills:
         description: ''
         percent: 75
         icon: custom/table_tennis
-      - name: Cinema
-        description: ''
-        percent: 75
-        icon: custom/cinema
-
 
 languages:
   - name: French (Native)
