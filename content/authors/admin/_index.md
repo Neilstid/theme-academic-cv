@@ -30,10 +30,6 @@ profiles:
   - icon: at-symbol
     url: 'mailto:your-email@example.com'
     label: E-mail Me
-  - icon: brands/x
-    url: https://twitter.com/GetResearchDev
-  - icon: brands/instagram
-    url: https://www.instagram.com/
   - icon: brands/github
     url: https://github.com/gcushen
   - icon: brands/linkedin
@@ -52,7 +48,7 @@ education:
   - area: PhD Artificial Intelligence
     institution: Technology University of Belfort-Montbéliard
     date_start: 2023-01-01
-    date_end: 2025-12-31
+    date_end: '' # 2025-12-31
     summary: |
       The thesis goal is to edit signs of aging of real image with Generative Adversarial Networks
 
@@ -72,28 +68,29 @@ education:
       - Artificial intelligence
       
 work:
-  - position: Director of Cloud Infrastructure
-    company_name: GenCoin
+  - position: Ph.D Canditate
+    company_name: Chanel, Pantin, France
     company_url: ''
     company_logo: ''
-    date_start: 2021-01-01
+    date_start: 2022-08-22
     date_end: ''
-    summary: |2-
-      Responsibilities include:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - position: Backend Software Engineer
-    company_name: X
+    summary: |
+      Misson include:
+      - Clinical research mission in artificial intelligence for Makeup Transfer task
+      - Research in disentangled image editing with Generative Adversarial Networks
+      - Synthesizing 3D images with Gaussian Splatting
+  - position: Engineer school final-year internship
+    company_name: Forvia, Bavans, France
     company_url: ''
     company_logo: ''
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+    date_start: 2022-02-01
+    date_end: 2022-31-07
     summary: |
-      Responsibilities include:
-      - Migrated infrastructure to a new data center
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      Misson include:
+      - Clinical research mission in artificial intelligence for Makeup Transfer task
+      - Research in disentangled image editing with Generative Adversarial Networks
+      - Synthesizing 3D images with Gaussian Splatting
+
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
@@ -103,19 +100,19 @@ skills:
       - name: Python
         description: ''
         percent: 100
-        icon: code-bracket
+        icon: devicon/python
       - name: Pytorch
         description: ''
         percent: 100
-        icon: pytorch
+        icon: devicon/pytorch
       - name: Java
         description: ''
         percent: 75
-        icon: java
+        icon: devicon/java
       - name: C
         description: ''
         percent: 75
-        icon: c
+        icon: devicon/c
   - name: Hobbies
     color: '#eeac02'
     color_border: '#f0bf23'
@@ -132,6 +129,11 @@ skills:
         description: ''
         percent: 100
         icon: custom/table_tennis
+      - name: Cinema
+        description: ''
+        percent: 100
+        icon: custom/cinema
+
 
 languages:
   - name: French (Native)
@@ -179,4 +181,8 @@ awards:
 
 ## About Me
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I am Neil FARMER a Ph.D candidate in Artificial Intelligence at CentraleSupelec & Chanel. My research interests focus on disentangled image editing using Generative Adversarial Networks, particularly for editing signs of aging.
+
+Prior to that, I studied Computer Science at Technology University of Belfort-Montbéliard (UTBM) where I graduated in 2022. My specializations during engineering school were Artificial intelligence [1], Software and knowledge engineering [2].
+
+{style="text-align: justify;"}
