@@ -7,6 +7,7 @@ type: landing
 design:
   # Default section spacing
   spacing: "6rem"
+  css_class: light
 
 sections:
   - block: resume-biography-3
@@ -22,6 +23,7 @@ sections:
       css_class: light
       background:
         color: light
+        text-color: light
         image:
           # Add your image background to `assets/media/`.
           filename: stacked-peaks.svg
@@ -29,7 +31,7 @@ sections:
             brightness: 1.0
           size: cover
           position: center
-          parallax: false
+          parallax: true
   - block: markdown
     content:
       title: '📚 My Research'

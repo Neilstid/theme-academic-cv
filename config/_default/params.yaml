@@ -9,7 +9,6 @@ appearance:
   theme_night: minimal
   font: minimal
   font_size: L
-  theme_default: light
 
 # SEO
 marketing:
