@@ -87,10 +87,44 @@ work:
     date_end: 2022-07-31
     summary: |
       Misson include:
-      - Clinical research mission in artificial intelligence for Makeup Transfer task
-      - Research in disentangled image editing with Generative Adversarial Networks
-      - Synthesizing 3D images with Gaussian Splatting
-
+      - Development in Python and Halcon of artificial intelligence models for defect detection based on supervised learning approaches, as part of the development of an assembly line optimization system. The project combines computer vision and artificial intelligence for the visual inspection of produced parts, with the objective to automate defect detection.
+      - Image processing : automatic recentering of a camera on a robotic arm focused on a produced part to detect defects on its inner surfaces.
+  - position: CERN Online Summer Student Programme 2021
+    company_name: Cern, Geneva, Switzerland
+    company_url: ''
+    company_logo: ''
+    date_start: 2021-07-01
+    date_end: 2021-08-31
+    summary: |
+      Misson include:
+      - Migration project Python 2 to Python 3, tutored by a software engineer from the Fermilab in Chicago
+  - position: Engineer school second-year internship
+    company_name: THALES Land and Air System, Limours, France
+    company_url: ''
+    company_logo: ''
+    date_start: 2020-09-01
+    date_end: 2021-02-31
+    summary: |
+      Misson include:
+      - In the Radar Embedded Processing Department, development in Python to create a VHDL library, an XML file to drive the registers, C code for the DSP (Digital Signal Processing) team & a documentation in Word regarding the registers in the VHDL library
+  - position: Data Science and Business Intelligence internship
+    company_name: EDF nuclear power plant, Civaux, France
+    company_url: ''
+    company_logo: ''
+    date_start: 2019-04-01
+    date_end: 2019-07-31
+    summary: |
+      Misson include:
+      - Development of macros in VBA to record data to help the Nuclear Safety Engineers in the process of verifications as part of their safety analyses
+  - position: Junior Data-Analyst
+    company_name: Armatis-LC, Boulogne-Billancour, France
+    company_url: ''
+    company_logo: ''
+    date_start: 2018-06-01
+    date_end: 2018-07-31
+    summary: |
+      Misson include:
+      - Design of recruitment dashboards (VBA) & presentation of the summary to the management
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
@@ -140,7 +174,5 @@ languages:
 ## About Me
 
 <p align=justify>
-I am Neil FARMER a Ph.D candidate in Artificial Intelligence at CentraleSupelec & Chanel. My research interests focus on disentangled image editing using Generative Adversarial Networks, particularly for editing signs of aging.
-
-Prior to that, I studied Computer Science at Technology University of Belfort-Montbéliard (UTBM) where I graduated in 2022. My specializations during engineering school were Artificial intelligence [1], Software and knowledge engineering [2].
+I am Neil FARMER a Ph.D candidate in Artificial Intelligence at CentraleSupelec & Chanel. My research interests focus on disentangled image editing using Generative Adversarial Networks, particularly for editing signs of aging.Prior to that, I studied Computer Science at Technology University of Belfort-Montbéliard (UTBM) where I graduated in 2022. My specializations during engineering school were Artificial intelligence [1], Software and knowledge engineering [2].
 </p>
