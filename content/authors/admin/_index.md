@@ -67,7 +67,7 @@ education:
     summary: |
       GPA: 3.52/4.0
 
-      Courses included:
+      Specializations:
       - Software and knowledge engineering
       - Artificial intelligence
       
@@ -102,40 +102,48 @@ skills:
     items:
       - name: Python
         description: ''
-        percent: 80
+        percent: 100
         icon: code-bracket
-      - name: Data Science
+      - name: Pytorch
         description: ''
         percent: 100
-        icon: chart-bar
-      - name: SQL
+        icon: pytorch
+      - name: Java
         description: ''
-        percent: 40
-        icon: circle-stack
+        percent: 75
+        icon: java
+      - name: C
+        description: ''
+        percent: 75
+        icon: c
   - name: Hobbies
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: Hiking
-        description: ''
-        percent: 60
-        icon: person-simple-walk
-      - name: Cats
+      - name: Chess
         description: ''
         percent: 100
-        icon: cat
-      - name: Photography
+        icon: custom/chess
+      - name: Ski
         description: ''
-        percent: 80
-        icon: camera
+        percent: 100
+        icon: custom/skiing
+      - name: Table-tennis
+        description: ''
+        percent: 100
+        icon: custom/table_tennis
 
 languages:
-  - name: English
+  - name: French (Native)
     percent: 100
-  - name: Chinese
-    percent: 75
-  - name: Portuguese
-    percent: 25
+  - name: English (B2)
+    percent: 90
+  - name: German (A2)
+    percent: 20
+  - name: Italian (A1)
+    percent: 10
+
+
 
 # Awards.
 #   Add/remove as many awards below as you like.
