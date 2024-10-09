@@ -84,7 +84,7 @@ work:
     company_url: ''
     company_logo: ''
     date_start: 2022-02-01
-    date_end: 2022-31-07
+    date_end: 2022-07-31
     summary: |
       Misson include:
       - Clinical research mission in artificial intelligence for Makeup Transfer task
