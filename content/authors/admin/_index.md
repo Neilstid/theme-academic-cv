@@ -1,155 +1,124 @@
 ---
 # Display name
-title: Neil FARMER
+title: 吳健雄
 
-# Full name
-first_name: Neil
-last_name: FARMER
+# Name pronunciation (optional)
+name_pronunciation: Chien Shiung Wu
+
+# Full name (for SEO)
+first_name: Shiung Wu
+last_name: Chien
 
 # Status emoji
-# status:
-#  icon: ☕️
+status:
+  icon: ☕️
 
 # Is this the primary user of the site?
 superuser: true
 
-# Highlight the author in author lists? (true/false)
-highlight_name: true
-
 # Role/position/tagline
-role: Phd Candidate
+role: Professor of Artificial Intelligence
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: CentraleSupelec & Chanel
-    url: ''
+  - name: Stanford University
+    url: https://www.stanford.edu/
 
-# Social network links
-# Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
-profiles:
-  - icon: at-symbol
-    url: 'mailto:your-email@example.com'
-    label: E-mail Me
-  - icon: brands/github
-    url: https://github.com/gcushen
-  - icon: brands/linkedin
-    url: https://www.linkedin.com/
-  - icon: academicons/google-scholar
-    url: https://scholar.google.com/
-  - icon: academicons/orcid
-    url: https://orcid.org/
+# Short bio (displayed in user profile at end of posts)
+bio: My research interests include distributed robotics, mobile computing and programmable matter.
 
 # Interests to show in About widget
 interests:
-  - Generative Artificial Intelligence
-  - Computer Vision
+  - Artificial Intelligence
+  - Computational Linguistics
+  - Information Retrieval
 
+# Education to show in About widget
 education:
-  - area: PhD Artificial Intelligence
-    institution: Technology University of Belfort-Montbéliard
-    date_start: 2023-01-01
-    date_end: '' # 2025-12-31
-    summary: |
-      The thesis goal is to edit signs of aging of real image with Generative Adversarial Networks
-
-    button:
-      text: 'Read Thesis'
-      url: 'https://example.com'
-
-  - area: Engineering school in Computer Science (CS)
-    institution: Technology University of Belfort-Montbéliard (UTBM)
-    date_start: 2019-09-01
-    date_end: 2022-09-01
-    summary: |
-      GPA: 3.52/4.0
-
-      Specializations:
-      - Software and knowledge engineering
-      - Artificial intelligence
-      
-work:
-  - position: Ph.D Canditate
-    company_name: Chanel, Pantin, France
-    company_url: ''
-    company_logo: ''
-    date_start: 2022-08-22
-    date_end: ''
-    summary: |
-      Misson include:
-      - Clinical research mission in artificial intelligence for Makeup Transfer task
-      - Research in disentangled image editing with Generative Adversarial Networks
-      - Synthesizing 3D images with Gaussian Splatting
-  - position: Engineer school final-year internship
-    company_name: Forvia, Bavans, France
-    company_url: ''
-    company_logo: ''
-    date_start: 2022-02-01
-    date_end: 2022-07-31
-    summary: |
-      Misson include:
-      - Clinical research mission in artificial intelligence for Makeup Transfer task
-      - Research in disentangled image editing with Generative Adversarial Networks
-      - Synthesizing 3D images with Gaussian Splatting
-
+  courses:
+    - course: PhD in Artificial Intelligence
+      institution: Stanford University
+      year: 2012
+    - course: MEng in Artificial Intelligence
+      institution: Massachusetts Institute of Technology
+      year: 2009
+    - course: BSc in Artificial Intelligence
+      institution: Massachusetts Institute of Technology
+      year: 2008
 
 # Skills
-# Add your own SVG icons to `assets/media/icons/`
+# For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
 skills:
-  - name: Technical Skills
+  - name: Technical
     items:
       - name: Python
         description: ''
-        percent: 100
-        icon: devicon/python
-      - name: Pytorch
+        percent: 80
+        icon: python
+        icon_pack: fab
+      - name: Data Science
         description: ''
         percent: 100
-        icon: devicon/pytorch
-      - name: Java
+        icon: chart-line
+        icon_pack: fas
+      - name: SQL
         description: ''
-        percent: 75
-        icon: devicon/java
-      - name: C
-        description: ''
-        percent: 75
-        icon: devicon/c
+        percent: 40
+        icon: database
+        icon_pack: fas
   - name: Hobbies
+    color: '#eeac02'
+    color_border: '#f0bf23'
     items:
-      - name: Chess
+      - name: Hiking
+        description: ''
+        percent: 60
+        icon: person-hiking
+        icon_pack: fas
+      - name: Cats
         description: ''
         percent: 100
-        icon: custom/chess
-      - name: Ski
+        icon: cat
+        icon_pack: fas
+      - name: Photography
         description: ''
-        percent: 100
-        icon: custom/skiing
-      - name: Table-tennis
-        description: ''
-        percent: 75
-        icon: custom/table_tennis
-      - name: Cinema
-        description: ''
-        percent: 75
-        icon: custom/cinema
+        percent: 80
+        icon: camera-retro
+        icon_pack: fas
 
+# Social/Academic Networking
+# For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
+#   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
+#   form "mailto:your-email@example.com" or "/#contact" for contact widget.
+social:
+  - icon: envelope
+    icon_pack: fas
+    link: '/#contact'
+  - icon: twitter
+    icon_pack: fab
+    link: https://twitter.com/GeorgeCushen
+    label: Follow me on Twitter
+    display:
+      header: true
+  - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
+    icon_pack: fas
+    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  - icon: github
+    icon_pack: fab
+    link: https://github.com/gcushen
+  - icon: linkedin
+    icon_pack: fab
+    link: https://www.linkedin.com/
+  # Link to a PDF of your resume/CV.
+  # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.yaml`,
+  # and uncomment the lines below.
+  - icon: cv
+    icon_pack: ai
+    link: uploads/resume.pdf
 
-languages:
-  - name: French (Native)
-    percent: 100
-  - name: English (B2)
-    percent: 90
-  - name: German (A2)
-    percent: 20
-  - name: Italian (A1)
-    percent: 10
-
-
+# Highlight the author in author lists? (true/false)
+highlight_name: true
 ---
 
-## About Me
-
-I am Neil FARMER a Ph.D candidate in Artificial Intelligence at CentraleSupelec & Chanel. My research interests focus on disentangled image editing using Generative Adversarial Networks, particularly for editing signs of aging.
-
-Prior to that, I studied Computer Science at Technology University of Belfort-Montbéliard (UTBM) where I graduated in 2022. My specializations during engineering school were Artificial intelligence [1], Software and knowledge engineering [2].
-
+Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
 {style="text-align: justify;"}
