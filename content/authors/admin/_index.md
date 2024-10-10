@@ -46,7 +46,7 @@ interests:
 
 education:
   - area: PhD Artificial Intelligence
-    institution: Technology University of Belfort-Montbéliard
+    institution: CentraleSupélec
     date_start: 2023-01-01
     date_end: '' # 2025-12-31
     summary: |
