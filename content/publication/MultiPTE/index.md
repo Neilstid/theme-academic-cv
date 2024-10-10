@@ -82,10 +82,12 @@ image:
 
 ### Méthode
 
-### Méthode
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
 #### Création  des  PGT
-Pour guider le  réseau  dans  le  processus  d'apprentissage  de  l'édition, des  fausses  cibles  sont  créées : les pseudo-vérités terrain (PGT). Ces  PGT  sont  créés via des techniques de  traitement  d'image  traditionnelles à partir  de  l'image  d'entrée  {{< math >}}$$x$${{< /math >}}. Pour {{< math >}}$$k$${{< /math >}} directions d'édition, les  PGT  sont  désignées par {{< math >}}$$y_1$${{< /math >}}, ..., {{< math >}}$$y_k$${{< /math >}} (étape 2.a de la figure \ref{fig:PTE_Scheme}). Le nombre  de directions {{< math >}}$$k$${{< /math >}} est compris  entre 1 et la dimensionnalité  de  l'espace latent, soit 512 pour StyleGAN. 
+
+<p>Pour guider le réseau dans le processus d'apprentissage de l'édition, des fausses cibles sont créées : les pseudo-vérités terrain (PGT). Ces PGT sont créés via des techniques de traitement d'image traditionnelles à partir de l'image d'entrée \(x\). Pour $k$ directions d'édition, les PGT sont désignées par \(y_1\), ..., \(y_k\) (étape 2.a). Le nombre de directions \(k\) est compris entre 1 et la dimensionnalité de l'espace latent, soit 512 pour StyleGAN.</p>
 
 #### Création  des directions d'édition
 Pour réaliser  l'édition, une direction d'édition est associée à chacune  des  {{< math >}}$$k$${{< /math >}} pseudo-vérités terrain (PGT). Ces directions sont  notées  {{< math >}}$$\overrightarrow{d_1}$${{< /math >}}, ..., {{< math >}}$$\overrightarrow{d_k}$${{< /math >}}, respectivement pour les  PGT  {{< math >}}$$y_1$${{< /math >}}, ..., {{< math >}}$$y_k$${{< /math >}}. Ces directions sont  obtenues via l'utilisation  des dimensions de  l'espace latent peu  utilisées pour la génération  des images (étape 2.b).
