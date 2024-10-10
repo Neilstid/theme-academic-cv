@@ -7,8 +7,8 @@ first_name: Neil
 last_name: FARMER
 
 # Status emoji
-# status:
-#  icon: ☕️
+status:
+  icon: 👨🏻‍💻
 
 # Is this the primary user of the site?
 superuser: true
@@ -28,16 +28,16 @@ organizations:
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:your-email@example.com'
+    url: 'neil99.farmer@gmail.com'
     label: E-mail Me
   - icon: brands/github
-    url: https://github.com/gcushen
+    url: https://github.com/Neilstid
   - icon: brands/linkedin
-    url: https://www.linkedin.com/
+    url: https://www.linkedin.com/in/neil-farmer-6869a3150/
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/
+    url: https://scholar.google.fr/citations?user=Nom0lsEAAAAJ&hl=fr&authuser=1
   - icon: academicons/orcid
-    url: https://orcid.org/
+    url: https://orcid.org/0009-0003-7775-0491
 
 # Interests to show in About widget
 interests:
