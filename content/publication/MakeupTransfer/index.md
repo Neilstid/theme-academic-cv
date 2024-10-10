@@ -87,9 +87,8 @@ image:
 ![Architecture Multi-PTE](./architecture.png)
 
 <p align=justify>L'architecture du modèle consiste en deux étapes d'apprentissage distinctes : l'apprentissage de l'encodeur/décodeur et l'apprentissage auto-supervisé du générateur \(\alpha\). 
-L'apprentissage de l'encodeur/décodeur consiste à :
-\begin{enumerate}
-    \item Extraire les caractéristiques avec un encodeur \(E\), prenant en entrée une source $x$ et une référence \(y\).
-    \item Générer des images avec un décodeur pour le maquillage et le démaquillage (notés respectivement \(D_m\) et \(D_{mr}\)).
-\end{enumerate}
-En plus des fonctions de perte utilisées par EleGANt \cite{Yang_He_Xu_Gao_2022}, nous avons ajouté la fonction de perte Makeup Free Area Loss, qui assure la cohérence des zones sans maquillage (comme l'arrière-plan). </p>
+L'apprentissage de l'encodeur/décodeur consiste à :</p>
+- Extraire les caractéristiques avec un encodeur \(E\), prenant en entrée une source $x$ et une référence \(y\).
+- Générer des images avec un décodeur pour le maquillage et le démaquillage (notés respectivement \(D_m\) et \(D_{mr}\)).
+<p align=justify>
+En plus des fonctions de perte utilisées par EleGANt, nous avons ajouté la fonction de perte Makeup Free Area Loss, qui assure la cohérence des zones sans maquillage (comme l'arrière-plan). </p>
