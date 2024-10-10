@@ -110,7 +110,7 @@ work:
   - position: Data Science and Business Intelligence internship
     company_name: EDF nuclear power plant, Civaux, France
     company_url: ''
-    company_logo: ''
+    company_logo: 'custom/edf'
     date_start: 2019-04-01
     date_end: 2019-07-31
     summary: |
