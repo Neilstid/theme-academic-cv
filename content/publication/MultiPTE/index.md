@@ -1,5 +1,5 @@
 ---
-title: 'Pivotal Tuning Editing: Towards Disentangled Wrinkle Editing with GANs'
+title: 'Edition Multi-Pivots: Vers une Edition Multi-Directionnelle et Démêlée'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
@@ -15,11 +15,11 @@ authors:
 #   - 'Equal contribution'
 #   - 'Equal contribution'
 
-date: '2024-05-30'
-doi: '10.1109/FG59268.2024.10581987'
+date: '2024-07-01'
+doi: ''
 
 # Schedule page publish date (NOT publication's date).
-publishDate: '2024-07-11'
+publishDate: '2024-06-19'
 
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
@@ -27,13 +27,13 @@ publishDate: '2024-07-11'
 publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
-publication: In *IEEE International Conference on Automatic Face and Gesture Recognition*
-publication_short: In *FG*
+publication: In *Reconnaissance des Formes, Image, Apprentissage et Perception*
+publication_short: In *RFIAP*
 
-abstract: Generative Adversarial Networks (GANs) enable image editing by manipulating image features. However, these manipulations still lack disentanglement. For example, when a specific wrinkle is edited, other age-related features or facial expressions are often changed as well. This paper proposes a new method for disentangled editing. The presented approach is based on two pivot images that allow learning an editing direction for an input image. These pivots are based on a real image (the input) and a synthetic modification of the real image along the desired editing direction. Although our primary focus is on wrinkle editing applications, our method can be extended to other editing tasks, such as hair color or lipstick editing. Qualitative and quantitative results show that our Pivotal Tuning Editing (PTE) provides a higher level of disentanglement and a more realistic editing than state-of-the-art methods.
+abstract: Les réseaux antagonistes génératifs (GAN) permettent d’éditer des images en manipulant leurs caractéristiques. Cependant, ces manipulations ne sont pas toujours démêlées. Par exemple, lorsqu’une ride spécifique est modifiée, d’autres caractéristiques liées à l’âge sont souvent modifiées également. Cet article propose une nouvelle méthode d’édition démêlée. L’approche présentée est basée sur des images pivots qui permettent d’apprendre des directions d’édition pour une image d’entrée. Ces pivots sont basés sur une image réelle (l’entrée) et des modifications synthétiques de l’image réelle. Bien que notre principal cas d’applications d’édition soit les rides, notre méthode peut être étendue à d’autres tâches d’édition, telles que l’édition de la couleur des cheveux ou du rouge à lèvres. Les résultats qualitatifs et quantitatifs montrent que notre Edition Multi-Pivots (EMP) fournit un niveau plus élevé de démêlage et une édition plus réaliste que les méthodes de l’état de l’art.
 
 # Summary. An optional shortened abstract.
-summary: This paper proposes a new method for disentangled editing. The presented approach is based on two pivot images that allow learning an editing direction for an input image. These pivots are based on a real image (the input) and a synthetic modification of the real image along the desired editing direction.
+summary: Cet article propose une nouvelle méthode d’édition démêlée. L’approche présentée est basée sur des images pivots qui permettent d’apprendre des directions d’édition pour une image d’entrée. Ces pivots sont basés sur une image réelle (l’entrée) et des modifications synthétiques de l’image réelle.
 
 tags:
   - GAN
@@ -48,8 +48,8 @@ featured: true
 # - name: Custom Link
 #   url: http://example.org
 
-url_pdf: 'https://brosdocs.net/fg2024/182.pdf'
-url_code: 'https://github.com/Neilstid/Pivotal-Tuning-Editing'
+url_pdf: 'https://hal.science/hal-04616405/document'
+url_code: 'https://github.com/Neilstid/Edition-Multi-Pivots'
 url_dataset: ''
 url_poster: ''
 url_project: ''
@@ -60,7 +60,7 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)'
+  caption: 'Image credit:'
   focal_point: ''
   preview_only: false
 
@@ -79,4 +79,14 @@ image:
 #   Otherwise, set `slides: ""`.
 # slides: example
 ---
+
+### Méthode
+
+$$
+\paragraph{Création  des  PGT} Pour guider le  réseau  dans  le  processus  d'apprentissage  de  l'édition, des  fausses  cibles  sont  créées : les pseudo-vérités terrain (PGT). Ces  PGT  sont  créés via des techniques de  traitement  d'image  traditionnelles à partir  de  l'image  d'entrée  $x$. Pour $k$ directions d'édition, les  PGT  sont  désignées par $y_1$, ..., $y_k$ (étape 2.a de la figure \ref{fig:PTE_Scheme}). Le nombre  de directions $k$ est compris  entre 1 et la dimensionnalité  de  l'espace latent, soit 512 pour StyleGAN. Plus de  détails  dans  \ref{sec:Pseudo-Ground Truth (PGT) for features preservation}. 
+
+\paragraph{Création  des directions d'édition} Pour réaliser  l'édition, une direction d'édition est associée à chacune  des  $k$ pseudo-vérités terrain (PGT). Ces directions sont  notées  $\overrightarrow{d_1}$, ..., $\overrightarrow{d_k}$, respectivement pour les  PGT  $y_1$, ..., $y_k$. Ces directions sont  obtenues via l'utilisation  des dimensions de  l'espace latent peu  utilisées pour la génération  des images (étape 2.b de la figure \ref{fig:PTE_Scheme}), plus de  détails  dans  \ref{sec:Creation des directions}. 
+
+\paragraph{Apprentissage  des directions d'édition} L'image  inversée  $\hat{x}_{inv}$ est souvent  floue par rapport à l'image  originale  et  l'identité est perdue. Pour résoudre  ce  problème, le  PTI  \cite{Roich_Mokady_Bermano_Cohen-Or_2023} finetune  le  générateur  $G$  de  sorte  que  l'image  générée  $\hat{x}_{inv}$  soit  similaire à l'image  réelle  $x$  \cite{Roich_Mokady_Bermano_Cohen-Or_2023}. Cette  opération  de  finetuning  crée  une  copie  de  l'image  d'entrée  dans  l'espace latent du  générateur  avec  les  poids  $\theta_{pt}$. Nous avons  poussé plus loin cette  idée  de  finetuning  du  générateur pour éditer  les  attributs  d'une image réelle  $x$. Une  fois  que  le  générateur  $G$ est finetuné, il  peut  éditer  les  caractéristiques  souhaitées  sur  l'image  $x$ en suivant  les directions d'éditions  $\overrightarrow{d_1}$, ..., $\overrightarrow{d_k}$. Plus de  détails  dans  \ref{sec:Generator tuning for local and disentangle edition}.
+$$
 
