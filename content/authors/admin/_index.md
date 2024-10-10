@@ -38,6 +38,8 @@ profiles:
     url: https://scholar.google.fr/citations?user=Nom0lsEAAAAJ&hl=fr&authuser=1
   - icon: academicons/orcid
     url: https://orcid.org/0009-0003-7775-0491
+  - icon: academicons/cv
+    url: uploads/resume.pdf
 
 # Interests to show in About widget
 interests:
@@ -66,6 +68,17 @@ education:
       Specializations:
       - Software and knowledge engineering
       - Artificial intelligence
+
+  - area: Data Science & Statistics University Diploma of Technology (DUT)
+    institution: University of Caen Normandy
+    date_start: 2017-09-01
+    date_end: 2019-07-31
+    summary: |
+      Courses included:
+      - Introduction to programming language such as: R, SaS, Python, Matlab, VBA
+      - Applied Mathematics, Statistics, Probability
+      - DataViz (using Tableau Software, PowerBi and Python)
+      - Projects: Study on the orientation of high-school student, Study and Visuallization of the first job of the graduated students of University of Caen Normandy
       
 work:
   - position: Ph.D Canditate
