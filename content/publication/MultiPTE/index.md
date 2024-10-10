@@ -156,6 +156,6 @@ $$
     \label{table:Quantitative}
 \end{table*}
 $$
-{{< math >}}
+{{< /math >}}
 
 ### Reference
