@@ -95,15 +95,23 @@ image:
 
 #### Apprentissage  des directions d'édition
 
-<p align=justify>L'image inversée \(\hat{x}_{inv}\) est souvent floue par rapport à l'image originale et l'identité est perdue. Pour résoudre ce problème, le PTI \cite{Roich_Mokady_Bermano_Cohen-Or_2023} finetune le générateur \(G\) de sorte que l'image générée \(\hat{x}_{inv}\) soit similaire à l'image réelle \(x\) \cite{Roich_Mokady_Bermano_Cohen-Or_2023}. Cette opération de finetuning crée une copie de l'image d'entrée dans l'espace latent du générateur avec les poids \(\theta_{pt}\). Nous avons poussé plus loin cette idée de finetuning du générateur pour éditer les attributs d'une image réelle \(x\). Une fois que le générateur \(G\) est finetuné, il peut éditer les caractéristiques souhaitées sur l'image \(x\) en suivant les directions d'éditions \(\overrightarrow{d_1}\), ..., \(\overrightarrow{d_k}\).</p>
+<p align=justify>L'image inversée \(\hat{x}_{inv}\) est souvent floue par rapport à l'image originale et l'identité est perdue. Pour résoudre ce problème, le PTI [^1] finetune le générateur \(G\) de sorte que l'image générée \(\hat{x}_{inv}\) soit similaire à l'image réelle \(x\) [^1]. Cette opération de finetuning crée une copie de l'image d'entrée dans l'espace latent du générateur avec les poids \(\theta_{pt}\). Nous avons poussé plus loin cette idée de finetuning du générateur pour éditer les attributs d'une image réelle \(x\). Une fois que le générateur \(G\) est finetuné, il peut éditer les caractéristiques souhaitées sur l'image \(x\) en suivant les directions d'éditions \(\overrightarrow{d_1}\), ..., \(\overrightarrow{d_k}\).</p>
 
-### Result
+### Resultat
 
 | Metrics                                     |    IC    |  LD_o  |   MSE_o  |     SSIM    |  FID |   KID  |
 |---------------------------------------------|:------------------:|:----------------:|:------------------:|:-------------------:|:----------------:|:------------------:|
-| Resefa \cite{Zhu_Shen_Xu_Zhao_Chen_2022}    |        0.32        |       $154$      |       $0.89$       |       $0.859$       |       $89$       |       $1.70$       |
-| StyleMapGAN \cite{Kim_Choi_Kim_Yoo_Uh_2021} |       0.27       |   **29**  |        1.43        |        0.963        |        119       |       $2.37$       |
-| SOAT \cite{Chong_Lee_Forsyth_2021}          |   **0.08**  | *51* |   **0.09**  |   **0.995**  | *76* | *0.87* |
+| Resefa [^2]    |        0.32        |       $154$      |       $0.89$       |       $0.859$       |       $89$       |       $1.70$       |
+| StyleMapGAN [^3] |       0.27       |   **29**  |        1.43        |        0.963        |        119       |       $2.37$       |
+| SOAT [^4]          |   **0.08**  | *51* |   **0.09**  |   **0.995**  | *76* | *0.87* |
 | EMP                                         | *0.11* |       67     | *0.21* | *0.969* |   **31**  |   **0.31**  |
 
 ### Reference
+
+[^1]: D. Roich, R. Mokady, A. H. Bermano, and D. CohenOr, “Pivotal tuning for latent-based editing of real images,” ACM Transactions on Graphics (TOG), vol. 42, p. 1–13, Feb 2023.
+
+[^2]: J. Zhu, Y. Shen, Y. Xu, D. Zhao, and Q. Chen, “Region-based semantic factorization in GANs,” in International Conference on Machine Learning (ICML), 2022.
+
+[^3]: H. Kim, Y. Choi, J. Kim, S. Yoo, and Y. Uh, Exploiting Spatial Dimensions of Latent in GAN for Realtime Image Editing, p. 852–861. IEEE, Jun 2021.
+
+[^4]: M. J. Chong, H.-Y. Lee, and D. Forsyth, “Stylegan of all trades : Image manipulation with only pretrained stylegan,” arXiv, 2021.
