@@ -219,7 +219,6 @@ image:
 <div class="container">
 	<div class="image before" style="background-image:url('./before.jpg');"></div>
 	<div class="image after" style="background-image:url('./after.jpg');"></div>
-	
 	<input type="range" class="slider" min="1" max="100" value="50" />
 	<div class="slider-button"></div>
 </div>
