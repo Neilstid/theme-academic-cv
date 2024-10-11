@@ -111,55 +111,116 @@ image:
 #### Resultat Qualitatif
 
 <style>
-  div#comparison {
-    width: 60vw;
-    height: 60vw;
-    max-width: 600px;
-    max-height: 600px;
-    overflow: hidden;
+  /* Reset some default styles and set up the background color */
+  *,
+  *::after,
+  *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
   }
 
-  div#comparison figure {
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-before.jpg);
-    background-size: cover;
-    position: relative;
-    font-size: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
+  body {
+      background-color: #f0f0f0;
   }
 
-  div#comparison figure>img {
-    position: relative;
-    width: 100%;
+  /* Container styles */
+  .container {
+      position: relative;
+      overflow: hidden;
+      /* Set initial position for the slider handle (50% in this example) */
+      --position: 50%;
   }
 
-  div#comparison figure div {
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-after.jpg);
-    background-size: cover;
-    position: absolute;
-    width: 50%;
-    box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    bottom: 0;
-    height: 100%;
+  /* Image container */
+  .image-container {
+      aspect-ratio: 16/9; /* Set your desired aspect ratio */
+      /* Style images within the container */
+      img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+  }
+
+  /* Slider styles */
+  .slider {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      /* Hide slider input visually */
+      opacity: 0;
+  }
+
+  .slider-line {
+      /* Style the slider line */
+  }
+
+  .slider-button {
+      /* Style the slider handle */
   }
 </style>
 
 <script>
-  var divisor = document.getElementById("divisor");
-  var comparisonWidth = document.getElementById("comparison").clientWidth;
-
-  function moveDivisor(e) {
-    divisor.style.width = (e.offsetX * 100 / comparisonWidth) + "%";
+  function initializeSlider() {
+    const slider = document.querySelector('.slider');
+    const container = document.querySelector('.container');
+    slider.addEventListener('input', function (e) {
+      container.style.setProperty('--position', e.target.value + '%');
+    });
+  }
+  function loadImages() {
+    const file1 = document.querySelector('#imageUpload1').files[0];
+    const file2 = document.querySelector('#imageUpload2').files[0];
+    if (file1 && file2 && file1.type.startsWith('image/') && file2.type.startsWith('image/')) {
+      const imageBefore = document.querySelector('.image-before');
+      const imageAfter = document.querySelector('.image-after');
+      imageBefore.src = URL.createObjectURL(file1);
+      imageAfter.src = URL.createObjectURL(file2);
+    } else {
+      alert('Please select valid image files.');
+    }
+  }
+  function setAspectRatio(imageNumber) {
+    const imageElement = document.querySelector(`.image-${imageNumber}`);
+    const aspectRatio = imageElement.naturalWidth / imageElement.naturalHeight;
+    const aspectRatioString = aspectRatio.toString();
+    document.querySelector('.image-container').style.setProperty('--aspect-ratio', aspectRatioString);
+  }
+  function selectImage(imageNumber) {
+    const inputElement = document.querySelector(`#imageUpload${imageNumber}`);
+    const file = inputElement.files[0];
+    if (file && file.type.startsWith('image/')) {
+      if (imageNumber === 1) {
+        // Update file1 and file1Selected
+      } else {
+        // Update file2 and file2Selected
+      }
+      if (file1Selected && file2Selected) {
+        // Enable the "Show Difference" button
+      }
+    } else {
+      alert('Please select valid image files.');
+    }
   }
 </script>
 
-<div id="comparison" onmousemove="moveDivisor(event)">
-  <figure>
-    <div id="divisor"></div>
-  </figure>
+<!-- Container for the slider -->
+<div class="container">
+    <!-- Images to compare -->
+    <div class="image-container">
+        <img class="image-before slider-image image-1" src="before.png" alt="Before Image">
+        <img class="image-after slider-image image-2" src="after.png" alt="After Image">
+    </div>
+    <!-- Slider input element -->
+    <input type="range" min="0" max="100" value="50" aria-label="Percentage of before photo shown" class="slider">
+    <!-- Slider line and handle -->
+    <div class="slider-line" aria-hidden="true"></div>
+    <div class="slider-button" aria-hidden="true">
+        <!-- Slider handle icon (e.g., a draggable circle or button) -->
+    </div>
 </div>
+
 
 ### Reference
 
