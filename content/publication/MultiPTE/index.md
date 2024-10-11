@@ -111,116 +111,54 @@ image:
 #### Resultat Qualitatif
 
 <style>
-  div.container {
-    width: 800px;
-    height: 530px;
-    position: relative;
-    margin: 20px;
+  div#comparison {
+    width: 60vw;
+    height: 60vw;
+    max-width: 600px;
+    max-height: 600px;
+    overflow: hidden;
   }
 
-  div.image {
+  div#comparison figure {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-before.jpg);
+    background-size: cover;
+    position: relative;
+    font-size: 0;
+    width: 100%;
     height: 100%;
-    background-repeat: no-repeat;
-    background-position: top left;
+    margin: 0;
+  }
+
+  div#comparison figure>img {
+    position: relative;
+    width: 100%;
+  }
+
+  div#comparison figure div {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-after.jpg);
     background-size: cover;
     position: absolute;
-    top: 0px;
-    left: 0px;
-  }
-
-  div.before {
     width: 50%;
-    z-index: 2;
-  }
-
-  div.after {
-    width: 100%;
-    z-index: 1;
-  }
-
-  input.slider {
-    width: 100%;
+    box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    bottom: 0;
     height: 100%;
-    outline: none;
-    background-color: transparent;
-    position: absolute;
-    margin: 0px;
-    z-index: 3;
-    cursor: pointer;
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    transition: 0.25s all ease-in-out;
-    -moz-transition: 0.25s all ease-in-out;
-    -webkit-transition: 0.25s all ease-in-out;
-    z-index: 4;
-  }
-
-  input.slider::-moz-range-thumb {
-    width: 6px;
-    height: 600px;
-    background-color: white;
-    cursor: pointer;
-  }
-
-  input.slider::-webkit-slider-thumb {
-    width: 6px;
-    height: 530px;
-    background-color: white;
-    cursor: pointer;
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-  }
-
-
-  div.slider-button {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    -moz-broder-radius: 50%;
-    -webkit-border-radius: 50%;
-    background-color: white;
-    position: absolute;
-    top: calc(50% - 18px);
-    left: calc(50% - 18px);
-    cursor: pointer;
-    z-index: 3;
-  }
-
-  div.slider-button:before {
-    color: #555;
-    position: absolute;
-    top: 3px;
-    left: 0px;
-    content: "\2B9C";
-  }
-
-  div.slider-button:after {
-    color: #555;
-    position: absolute;
-    top: 3px;
-    right: 0px;
-    content: "\2B9E";
   }
 </style>
 
 <script>
-  $("input.slider").on("input change", function(event) {
-    var element = $(this).parents("div.container");
-    var pos = event.target.value;
-    
-    element.find("div.before").css({width: pos + "%"});
-    element.find("div.slider-button").css({left: "calc(" + pos + "% - 18px)"});
-  });
+  var divisor = document.getElementById("divisor");
+  var comparisonWidth = document.getElementById("comparison").clientWidth;
+
+  function moveDivisor(e) {
+    divisor.style.width = (e.offsetX * 100 / comparisonWidth) + "%";
+  }
 </script>
 
-
-<div class="container">
-	<div class="image before" style="background-image:url('./before.jpg');"></div>
-	<div class="image after" style="background-image:url('./after.jpg');"></div>
-	<input type="range" class="slider" min="1" max="100" value="50" />
-	<div class="slider-button"></div>
+<div id="comparison" onmousemove="moveDivisor(event)">
+  <figure>
+    <div id="divisor"></div>
+  </figure>
 </div>
 
 ### Reference
