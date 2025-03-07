@@ -33,9 +33,9 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+        My research focus on image synthesizing and editing with GANs. Above that I'm interested in most promising methods such as diffusion models, autoregressive models or autoencoders.
 
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
+        Natural Language Processing (NLP) is one of my curiousty topics now. Learning methods to encode text, extract informations, RAG, or finetuning existing models.
         
         Please reach out to collaborate 😃
     design:

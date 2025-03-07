@@ -92,6 +92,8 @@ work:
       - Clinical research mission in artificial intelligence for Makeup Transfer task
       - Research in disentangled image editing with Generative Adversarial Networks
       - Synthesizing 3D images with Gaussian Splatting
+      - Zero-shot image segmentation
+      - Ageing signs classification, including explainable AI to understand the model knowledge
   - position: Engineer school final-year internship
     company_name: Forvia, Bavans, France
     company_url: ''
