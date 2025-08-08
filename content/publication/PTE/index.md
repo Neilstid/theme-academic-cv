@@ -51,7 +51,7 @@ featured: true
 url_pdf: 'https://brosdocs.net/fg2024/182.pdf'
 url_code: 'https://github.com/Neilstid/Pivotal-Tuning-Editing'
 url_dataset: ''
-url_poster: ''
+url_poster: 'https://github.com/Neilstid/theme-academic-cv/static/uploads/poster_PTE.pdf'
 url_project: ''
 url_slides: ''
 url_source: ''

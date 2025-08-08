@@ -45,6 +45,7 @@ profiles:
 interests:
   - Generative Artificial Intelligence
   - Computer Vision
+  - Natural Langage Processing
 
 education:
   - area: PhD Artificial Intelligence
@@ -52,7 +53,8 @@ education:
     date_start: 2023-01-01
     date_end: '' # 2025-12-31
     summary: |
-      The thesis goal is to edit signs of aging of real image with Generative Adversarial Networks
+      Phd in Computer Science / Signal Processing
+      The thesis goal is to edit signs of aging of real image with Generative Adversarial Networks in a disentangled manner
 
     button:
       text: 'Read Thesis'
@@ -85,15 +87,23 @@ work:
     company_name: Chanel, Pantin, France
     company_url: ''
     company_logo: ''
-    date_start: 2022-08-22
+    date_start: 2023-01-01
     date_end: ''
     summary: |
-      Misson include:
-      - Clinical research mission in artificial intelligence for Makeup Transfer task
-      - Research in disentangled image editing with Generative Adversarial Networks
-      - Synthesizing 3D images with Gaussian Splatting
-      - Zero-shot image segmentation
+      Research on generative AI for image editing and development of AI for diverse business applications.
+      - Research in disentangled image editing with Generative Adversarial Networks for signs of ageing editing
+      - Oral and written communications in international scientific conference
+      - Synthesizing 3D images of face from smartphone short videos with Gaussian Splatting and NERFs
+      - Zero-shot image segmentation for particule caracterisation
       - Ageing signs classification, including explainable AI to understand the model knowledge
+  - position: Ph.D Canditate
+    company_name: Chanel, Pantin, France
+    company_url: ''
+    company_logo: ''
+    date_start: 2022-08-22
+    date_end: 2022-12-31
+    summary: |
+      Clinical research mission in artificial intelligence for Makeup Transfer task
   - position: Engineer school final-year internship
     company_name: Forvia, Bavans, France
     company_url: ''
@@ -176,7 +186,7 @@ skills:
 languages:
   - name: French (Native)
     percent: 100
-  - name: English (B2)
+  - name: English (C1)
     percent: 90
   - name: German (A2)
     percent: 20
