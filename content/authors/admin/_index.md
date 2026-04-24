@@ -17,7 +17,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Phd Candidate
+role: Disruptive Innovation Project Manager
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -51,14 +51,14 @@ education:
   - area: PhD Artificial Intelligence
     institution: CentraleSupélec
     date_start: 2023-01-01
-    date_end: '' # 2025-12-31
+    date_end: 2026-01-27
     summary: |
       Phd in Computer Science / Signal Processing
       The thesis goal is to edit signs of aging of real image with Generative Adversarial Networks in a disentangled manner
 
     button:
       text: 'Read Thesis'
-      url: 'https://example.com'
+      url: 'https://theses.hal.science/tel-05584601v1/file/2026CSUP0001_NEIL_2026_archivage.pdf'
 
   - area: Engineering school in Computer Science (CS)
     institution: Technology University of Belfort-Montbéliard (UTBM)
@@ -83,12 +83,22 @@ education:
       - Projects: Study on the orientation of high-school student, Study and Visuallization of the first job of the graduated students of University of Caen Normandy
       
 work:
+  - position: Disruptive Innovation Project Manager
+    company_name: Naval Group, Paris, France
+    company_url: ''
+    company_logo: ''
+    date_start: 2026-02-09
+    date_end: ''
+    summary: |
+      Bringing SOTA AI (agentic AI, computer vision, synthetic data, ...) for Naval Group
+      - Technical watch of latest AI technologies 
+      - Experimentation and Implementation of AI technologies 
   - position: Ph.D Canditate
     company_name: Chanel, Pantin, France
     company_url: ''
     company_logo: ''
     date_start: 2023-01-01
-    date_end: ''
+    date_end: 2026-01-31
     summary: |
       Research on generative AI for image editing and development of AI for diverse business applications.
       - Research in disentangled image editing with Generative Adversarial Networks for signs of ageing editing
@@ -96,7 +106,7 @@ work:
       - Synthesizing 3D images of face from smartphone short videos with Gaussian Splatting and NERFs
       - Zero-shot image segmentation for particule caracterisation
       - Ageing signs classification, including explainable AI to understand the model knowledge
-  - position: Ph.D Canditate
+  - position: Artificial Intelligence Engineer
     company_name: Chanel, Pantin, France
     company_url: ''
     company_logo: ''
@@ -199,5 +209,5 @@ languages:
 ## About Me
 
 <p align=justify>
-I am Neil FARMER a Ph.D candidate in Artificial Intelligence at CentraleSupelec & Chanel. My research interests focus on disentangled image editing using Generative Adversarial Networks, particularly for editing signs of aging.Prior to that, I studied Computer Science at Technology University of Belfort-Montbéliard (UTBM) where I graduated in 2022. My specializations during engineering school were Artificial intelligence [1], Software and knowledge engineering [2].
+I am Neil FARMER, I have a Ph.D in Artificial Intelligence at CentraleSupelec & Chanel and an engineering degree from UTBM. I am currently Disruptive Inovation Project Manager at Naval Group. My interest are about Agentic AI, Computer Vision and deep learning. My Ph.D research focused on disentangled image editing using Generative Adversarial Networks, particularly for editing signs of aging.
 </p>
