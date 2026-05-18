@@ -1,5 +1,5 @@
 ---
-title: JanusGAN: GANs Disentangled Editing with Two Discriminators
+title: "JanusGAN: GANs Disentangled Editing with Two Discriminators"
 
 event: Face and Gesture recognition (FG) 2025
 event_url: https://fg2025.ieee-biometrics.org/
