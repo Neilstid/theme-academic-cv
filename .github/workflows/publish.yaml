@@ -60,7 +60,7 @@ jobs:
       run: npx pagefind --site "public"
 
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3 # Mis à jour de v2 à v3 (Règle le problème d'artéfact déprécié)
+      uses: actions/upload-pages-artifact@v4 # Mis à jour de v2 à v3 (Règle le problème d'artéfact déprécié)
       with:
         path: ./public
 
