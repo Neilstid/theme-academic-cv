@@ -1,0 +1,3 @@
+[submodule "scripts/argos"]
+	path = scripts/argos
+	url = https://github.com/Neilstid/argos
