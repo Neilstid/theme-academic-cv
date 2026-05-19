@@ -15,7 +15,7 @@ jobs:
       - name: "Set up Python"
         uses: actions/setup-python@v6
         with:
-          python-version-file: "scripts/argos/pyproject.toml"
+          python-version-file: "scripts/argos/.python-version"
 
       - name: "Install uv"
         uses: astral-sh/setup-uv@v5 # v8.1.0
@@ -24,7 +24,7 @@ jobs:
         run: uv sync --locked --all-extras --dev
 
       - name: "run script"
-        run: uv run script/argos/main.py --config scripts/argos/feeds/ai_research.yaml --output content/post/daily_ai/daily_ai_{date}.md
+        run: uv run scripts/argos/main.py --config scripts/argos/feeds/ai_research.yaml --output content/post/daily_ai/daily_ai_{date}.md
 
       - name: Commit et Push des modifications
         run: |
