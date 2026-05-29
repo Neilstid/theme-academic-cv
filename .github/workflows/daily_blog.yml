@@ -24,11 +24,11 @@ jobs:
         uses: astral-sh/setup-uv@v5 # v8.1.0
 
       - name: "Set up Python"
-        working-directory: scripts/argos # ⬅️ Indique où chercher le pyproject.toml
+        working-directory: scripts/argos
         run: uv sync --locked --all-extras --dev
 
       - name: "run script"
-        working-directory: scripts/argos # ⬅️ Se place aussi dans argos pour l'exécution
+        working-directory: scripts/argos
         run: uv run main.py --config feeds/ai_research.yaml --output ../../content/post/daily_ai/daily_ai_{date}.md
         env:
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }} 
