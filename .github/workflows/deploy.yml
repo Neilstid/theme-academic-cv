@@ -7,6 +7,11 @@ on:
   # Allows you to run this workflow manually from the Actions tab on GitHub
   workflow_dispatch:
 
+  workflow_run:
+    workflows: ["daily_blog"] # The exact name of the workflow that pushes
+    types:
+      - completed
+
 # Provide permission to clone the repo and deploy it to GitHub Pages
 permissions:
   contents: read
