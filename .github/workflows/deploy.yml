@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
   workflow_run:
-    workflows: ["daily_blog"] # The exact name of the workflow that pushes
+    workflows: ["Daily Blog Generator"] # The exact name of the workflow that pushes
     types:
       - completed
 
