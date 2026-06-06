@@ -21,7 +21,7 @@ role: Disruptive Innovation Project Manager
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: CentraleSupelec & Chanel
+  - name: Naval Group
     url: ''
 
 # Social network links
