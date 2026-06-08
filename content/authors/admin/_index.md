@@ -91,8 +91,9 @@ work:
     date_end: ''
     summary: |
       Bringing SOTA AI (agentic AI, computer vision, synthetic data, ...) for Naval Group
-      - Technical watch of latest AI technologies 
-      - Experimentation and Implementation of AI technologies 
+      - Technical watch of latest AI technologies (Agentic AI, World Model, Diffusion Model, RAG, ...) 
+      - Experimentation and Implementation of AI technologies (RL for drone, Agentic RAG for documentation/maintenance)
+      - Exploration of disruptive technologies and implementing POC
   - position: Ph.D Canditate
     company_name: Chanel, Pantin, France
     company_url: ''
@@ -209,5 +210,5 @@ languages:
 ## About Me
 
 <p align=justify>
-I am Neil FARMER, I have a Ph.D in Artificial Intelligence at CentraleSupelec & Chanel and an engineering degree from UTBM. I am currently Disruptive Inovation Project Manager at Naval Group. My interest are about Agentic AI, Computer Vision and deep learning. My Ph.D research focused on disentangled image editing using Generative Adversarial Networks, particularly for editing signs of aging.
+I am Neil FARMER, I have a Ph.D in Artificial Intelligence at CentraleSupelec & Chanel and an engineering degree from UTBM. I am currently Disruptive Inovation Project Manager at Naval Group. My interest are about Agentic AI, Computer Vision and Deep Learning. My Ph.D research focused on disentangled image editing using Generative Adversarial Networks, particularly for editing signs of aging.
 </p>
