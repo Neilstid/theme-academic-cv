@@ -21,3 +21,12 @@ This includes:
 to map and reduce articles, summarizing and selecting the most relevant news.
 - **Markdown Output**: Generates a ready-to-publish Markdown file.
 - **Configurable**: Define your feed sources in simple `.yaml` files.
+- **MCP Server**: Use argos to discovers rss feeds on a subject, and get the latest news of a selected sources. 
+
+# Access
+
+## MCP 
+
+You can access to argos with MCP server using the following mcp link: https://argos-rss.fastmcp.app/mcp
+
+# Changelog
