@@ -15,7 +15,7 @@ sections:
       text: Here are the latest Daily AI post. These posts are written using [Argos](https://github.com/Neilstid/argos). 
       filters:
         folders:
-          - post/daily_ai
+          - post/daily\_ai
     design:
       view: article-grid
       fill_image: false
