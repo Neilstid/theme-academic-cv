@@ -23,5 +23,5 @@ main:
     url: projects/
     weight: 30
   - name: Daily AI
-    url: daily_ai/
+    url: post/daily_ai/
     weight: 40
