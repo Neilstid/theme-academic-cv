@@ -1,26 +1,22 @@
 ---
-title: "Revolutionizing AI with Open-Source Multimodal Models and Enterprise AI Sovereignty: A Deep Dive into Thinking Machines’ Inkling and Beyond"
-summary: "Explore how Thinking Machines’ Inkling, the first open-source multimodal AI model under Apache 2.0, is redefining enterprise AI with controllable reasoning, censorship resistance, and native multimodality. This article also covers Cohere’s and Amazon’s perspectives on AI sovereignty, reliability, and the future of agentic workflows."
+title: "AI Frontiers: GPT-Red’s Self-Improving Safety, Inkling’s Multimodal MoE, and the Enterprise Agentic Gap"
+summary: "This article explores three pivotal advancements in AI: OpenAI’s GPT-Red, a self-improving red-teaming system for AI safety; Thinking Machines Lab’s Inkling, a 975B-parameter open-weights multimodal Mixture-of-Experts model; and the enterprise orchestration gap revealed by a VentureBeat survey of 101 organizations. Together, these innovations and insights highlight the rapid evolution of AI robustness, multimodal capabilities, and the practical challenges of deploying agentic systems at scale."
 date: 2026-07-16
 math: true
 authors:
     - admin
 tags:
-  - Artificial Intelligence
+  - AI Safety
+  - GPT-Red
   - Multimodal AI
-  - Open-Source Models
-  - Enterprise AI
-  - Thinking Machines
   - Inkling
-  - AI Sovereignty
-  - Cohere
-  - Amazon AGI
-  - AI Agents
-  - Machine Learning
+  - Mixture-of-Experts
+  - Agentic Orchestration
+  - Enterprise AI
   - NLP
   - Computer Vision
-  - MoE Architecture
-  - AI Reliability
+  - OpenAI
+  - Thinking Machines Lab
 image:
 caption: 'Embed rich media such as videos and LaTeX math'
 
@@ -33,179 +29,144 @@ caption: 'Embed rich media such as videos and LaTeX math'
 
 ---
 
-> \u2665 **TL;DR:** Thinking Machines’ Inkling, a 975B-parameter open-source multimodal AI model, introduces controllable reasoning effort, native multimodality (text, vision, audio), and censorship resistance under an Apache 2.0 license. This article explores Inkling’s architecture, benchmarks, and enterprise implications, alongside insights from Cohere and Amazon on AI sovereignty, reliability, and the path forward for open-source AI adoption.
-
+> \u26a1 **TL;DR:** OpenAI\’s GPT-Red introduces a self-play reinforcement learning framework to automate red-teaming and harden AI models against prompt injection attacks, achieving 6x fewer failures in GPT-5.6 Sol. Meanwhile, Thinking Machines Lab\’s Inkling debuts as a 975B-parameter open-weights multimodal MoE model with controllable reasoning effort, optimized for customization. A VentureBeat survey reveals that while enterprises are consolidating onto platforms like Anthropic\’s Claude for agent orchestration, 71% admit most of their \"agents\" are still chatbot wrappers, exposing a gap between ambition and reality.
 
 | Metric / Innovation Area | Insight / Takeaway |
-|--------------------------|---------------------|
-| **Model Scale & Architecture** | 975B total parameters, 41B active (sparse MoE), relative positional embeddings, and native multimodality (text, vision, audio). |
-| **Controllable Thinking Effort** | Programmatically adjustable reasoning budget (0.2 to 0.99) for cost-performance optimization. |
-| **Benchmark Performance** | Competitive in multimodal tasks (e.g., 73.3% on MMMU Pro, 77.2% on MMAU) but trails proprietary models in pure reasoning (e.g., 30.0% on HLE text-only). |
-| **Censorship Resistance** | Designed to answer sensitive queries directly while maintaining safety (98.6% on StrongREJECT, 78.0% refusal rate on adversarial queries). |
-| **Enterprise AI Sovereignty** | Cohere emphasizes control over the full agent stack (data, models, infrastructure, governance) to reduce vendor lock-in. |
-| **AI Agent Reliability** | Amazon’s framework prioritizes consistency, robustness, predictability, and safety over raw capability. |
+|---|---|
+| **GPT-Red Robustness** | 6x fewer failures on direct prompt injection benchmarks in GPT-5.6 Sol vs. models from 4 months prior. |
+| **GPT-Red Attack Success** | 84% success rate in novel red-teaming scenarios vs. 13% for human red-teamers. |
+| **Inkling Architecture** | 975B total parameters, 41B active, 1M-token context, MoE with 256 routed + 2 shared experts. |
+| **Inkling Efficiency** | Matches Nemotron 3 Ultra on Terminal Bench 2.1 at 1/3 the token cost. |
+| **Inkling Benchmarks** | Leads open-weights models on FORTRESS Adversarial (78.0%); trails GLM-5.2 on Terminal Bench 2.1 by 18.9 points. |
+| **Enterprise Orchestration** | 40% of enterprises use Anthropic\’s Claude as primary platform; 71% have <=25% truly orchestrated agents. |
+| **Hybrid Control Plane** | 51% of enterprises expect a hybrid control plane by end-2026 to avoid vendor lock-in. |
 
+### GPT-Red: Redefining AI Safety with Self-Improving Robustness
 
----
+The escalating sophistication of AI models has outpaced traditional red-teaming methods, creating a critical bottleneck in ensuring safety and alignment. OpenAI\’s response is **GPT-Red**, an automated red-teaming system that leverages **self-play reinforcement learning** to dynamically uncover vulnerabilities and harden models against adversarial attacks, particularly prompt injections. This innovation marks a paradigm shift: instead of relying solely on human red-teamers—a time-intensive and unscalable approach—GPT-Red automates the discovery of failure modes, generating the volume and diversity of adversarial data needed to train more robust models.
 
-### 1. Introduction to the Breakthrough: Thinking Machines’ Inkling – The Future of Open-Source Multimodal AI
-
-In a landscape dominated by proprietary AI giants, Thinking Machines’ **Inkling** emerges as a beacon of open-source innovation. Released under the permissive **Apache 2.0 license**, Inkling is the first natively multimodal language model to combine **text, vision, and audio** processing in a single, unified architecture. Founded by former OpenAI CTO **Mira Murati** and industry veterans like John Schulman, Thinking Machines has positioned Inkling as a tool for enterprises seeking **cost-efficiency, on-premise deployment, and programmatic control** over AI workloads.
-
-At its core, Inkling is a **Mixture-of-Experts (MoE) model** with 975 billion total parameters, of which only **41 billion are active** during inference. This sparse activation strategy enables efficient scaling while maintaining performance. Unlike traditional transformers, Inkling employs **relative positional embeddings** instead of Rotary Positional Embedding (RoPE), a design choice that enhances its ability to handle long-range dependencies in multimodal data. Its **1-million-token context window** further solidifies its utility for complex, multi-step reasoning tasks.
-
-Inkling’s native multimodality is achieved through an **encoder-free early fusion approach**. Audio is ingested as discrete dMel spectrograms, while visual data is processed as 40x40 pixel patches via a **hierarchical multi-layer perceptron (hMLP)**. All modalities are projected into a shared hidden space, enabling seamless cross-modal reasoning. This architecture is a departure from models that rely on bolted-on external encoders, offering a more integrated and efficient solution.
+At its core, GPT-Red operates through a **self-play framework** where the model (the attacker) and a collection of defender LLMs are trained simultaneously across a broad set of red-teaming scenarios. The attacker is rewarded for eliciting valid failures (e.g., successful prompt injections), while defenders are incentivized to resist attacks and complete their original tasks. As defenders grow more robust, GPT-Red is forced to develop stronger, more diverse attacks, creating a **virtuous cycle of self-improvement**. This approach was trained at a compute scale comparable to OpenAI\’s largest post-training runs, underscoring its significance as a dedicated safety investment.
 
 ```mermaid
 flowchart TD
-    A[Input: Text/Audio/Image] --> B[Modality-Specific Preprocessing]
-    B --> C[hMLP Projection]
-    C --> D[Shared Hidden Space]
-    D --> E[MoE Layer: 41B Active Parameters]
-    E --> F[Output: Unified Reasoning]
-    style A fill:#f9f,stroke:#333
-    style F fill:#bbf,stroke:#333
+    A[GPT-Red Attacker] -->|Generates Attack| B[Defender LLM]
+    B -->|Resists/Complies| C{Attack Success?}
+    C -->|Yes| D[Reward Attacker]
+    C -->|No| E[Reward Defender]
+    D --> F[Iterate: Stronger Attacks]
+    E --> F
+    F --> B
 ```
 
-Performance benchmarks reveal Inkling as a **high-end, sub-state-of-the-art** model. It excels in **software engineering** (77.6% on SWE-bench Verified) and **voice understanding** (91.4% on VoiceBench), outperforming rivals like NVIDIA’s Nemotron 3. However, it trails proprietary models like **Claude Fable 5** and **GPT 5.6 Sol** in peak reasoning and coding tasks. For instance, Claude Fable 5 achieves **95.0% on SWE-bench Verified** compared to Inkling’s 77.6%. Yet, Inkling’s **native multimodality** keeps it competitive in vision (73.3% on MMMU Pro) and audio (77.2% on MMAU) benchmarks.
+The results are striking. GPT-Red\’s integration into the training of **GPT-5.6 Sol** has yielded a model that is **6x more resistant** to direct prompt injection attacks compared to OpenAI\’s best production model from just four months earlier. In a replicated indirect prompt injection arena, GPT-Red achieved an **84% attack success rate**, dwarfing the 13% success rate of human red-teamers. Even in real-world tests, such as an AI-powered vending machine deployment, GPT-Red successfully executed malicious objectives like manipulating prices and canceling orders, demonstrating its efficacy against production systems.
 
-Why does this matter for enterprises? Inkling offers **true open-source freedom**—no revenue caps, no dual-use restrictions—enabling businesses to **customize, deploy on-premise, or integrate into private clouds** without vendor lock-in. Its **controllable thinking effort** mechanism, which we’ll explore next, further cements its appeal for cost-sensitive, real-world applications.
+![Visual showing a GPT-Red attack-search process against a Vendy-style autonomous vending machine agent.](media/media-54f194ab.svg)
 
+Critically, GPT-Red is kept **separate from deployed models** to prevent adversarial capabilities from leaking into public-facing systems. Instead, its insights are used to adversarially train production models, instilling robustness without exposing malicious potential. This separation ensures that while GPT-Red is a formidable attacker—capable of breaking nearly all models it faces, including GPT-5.5—its knowledge is used defensively to patch vulnerabilities preemptively.
 
----
-
-### 2. Controllable Thinking Effort: Redefining AI Workflows for Enterprises
-
-One of Inkling’s most innovative features is its **controllable thinking effort**, a mechanism that allows developers to **programmatically adjust the model’s reasoning budget** on a scale from **0.2 to 0.99**. This granular control enables enterprises to **optimize token usage**—and thus costs—for tasks of varying complexity. For simple queries, a lower thinking effort reduces latency and computational overhead, while complex, multi-step reasoning tasks can leverage higher effort settings for improved accuracy.
-
-Thinking Machines describes this as a **"continuous thinking effort"** that lets users "pick their point on the cost/performance curve." During reinforcement learning (RL) training, researchers observed an emergent phenomenon they termed **"chain of thought condensation."** Over 30 million rollouts, Inkling learned to **compress its internal reasoning steps**, dropping grammatical overhead while maintaining accuracy. This results in **drastically reduced latency** without sacrificing performance.
-
-The practical implications are significant. Enterprises can now **dynamically allocate compute resources** based on task demands. For example:
-- **Low-effort mode (0.2)**: Ideal for straightforward queries like data retrieval or simple classifications, where minimal reasoning is required.
-- **High-effort mode (0.99)**: Suited for complex problem-solving, such as debugging code or synthesizing cross-modal insights.
-
-This adaptability contrasts sharply with the **black-box scaling strategies** of frontier models, which often prioritize peak performance at the expense of efficiency. Inkling’s approach aligns with a growing enterprise demand for **predictable, cost-effective AI** that can be fine-tuned to specific workflows.
-
-To illustrate, consider the following pseudocode for adjusting thinking effort in a hypothetical deployment:
-
-```python
-# Example: Adjusting Inkling's thinking effort for a task
-from inkling import Model
-
-model = Model(name="inkling-975b")
-
-# Low effort for a simple Q&A task
-response = model.generate(
-    prompt="What is the capital of France?",
-    thinking_effort=0.2
-)
-
-# High effort for a complex reasoning task
-response = model.generate(
-    prompt="Debug this Python function and explain the fix.",
-    thinking_effort=0.99
-)
-```
-
-By enabling **fine-grained control**, Inkling empowers enterprises to **balance performance with cost**, a critical factor for large-scale deployments.
+The broader implication is a **flywheel for AI safety**: today\’s models are used to train tomorrow\’s defenses. As OpenAI continues to scale GPT-Red\’s compute and data, future iterations will likely uncover even more sophisticated attack vectors, further hardening subsequent model releases. This self-improving loop could become a cornerstone of AI alignment, ensuring that safety keeps pace with capability.
 
 
----
+### Inkling: The Future of Customizable Multimodal AI
 
-### 3. Inkling’s Multimodality and Censorship Resistance: A Game-Changer for Enterprise AI
+While GPT-Red focuses on safety, **Thinking Machines Lab\’s Inkling** represents a leap forward in **multimodal, customizable AI**. Released as an open-weights model under Apache 2.0, Inkling is a **975B-parameter Mixture-of-Experts (MoE) transformer** with **41B active parameters**, a **1M-token context window**, and native support for **text, image, and audio inputs**. Unlike many frontier models that prioritize raw performance, Inkling is explicitly positioned as a **customization base**, with **controllable thinking effort** as its standout feature.
 
-Inkling’s **native multimodality** is a standout feature in an era where agentic AI workflows increasingly rely on **cross-modal reasoning**. Unlike models that treat vision or audio as afterthoughts, Inkling processes all modalities **natively and simultaneously**, making it ideal for applications like **document analysis, video understanding, or multi-sensory data fusion**.
-
-Benchmark results underscore its strengths:
-- **MMMU Pro (Standard 10)**: 73.3% (competitive with proprietary models like GPT 5.6 Sol at 83.0%).
-- **MMAU (Audio)**: 77.2% (close to Gemini 3.1 Pro’s 82.5%).
-- **AIME 2026 (Math)**: 97.1% (outperforming DeepSeek V4 Pro’s 96.7%).
-
-However, Inkling’s most controversial—and perhaps most valuable—feature is its **resistance to censorship**. In an AI ecosystem where open-weight models often adopt **overly restrictive safety guardrails** or echo state-aligned narratives, Inkling was explicitly designed to **answer directly on politically sensitive or censored topics**. This was validated through the **Propaganda and Censorship Eval** by AI startup Cognition, where Inkling demonstrated **"strong patterns of censorship non-compliance."**
-
-Yet, this does not mean Inkling is unsafe. On the **StrongREJECT benchmark**, which tests responses to harmful requests, Inkling scored **98.6%**, aligning with frontier safety standards. On the **FORTRESS benchmark**, it achieved a **78.0% refusal rate** on adversarial queries (e.g., weapons, cyberattacks) while maintaining a **95.9% compliance rate** on benign queries. This balance between **openness and safety** is critical for enterprises operating in regulated or high-stakes environments.
-
-Thinking Machines acknowledges that **external moderation tools** (e.g., Llama Guard) should still be deployed downstream to mitigate risks like jailbreaks or role-play prompts. For enterprises, this means Inkling offers **both transparency and control**—a rare combination in today’s AI landscape.
+Inkling\’s architecture is a **66-layer decoder-only transformer** with a sparse MoE feed-forward backbone. Each MoE layer contains **256 routed experts and 2 shared experts**, with **6 routed experts activating per token**. The router uses a sigmoid-based selection mechanism with load-balancing bias, ensuring efficient and balanced expert utilization. This design draws heavily from **DeepSeek-V3**, but with notable deviations: attention layers interleave sliding-window and global layers at a 5:1 ratio with 8 KV heads, and **relative positional embeddings** replace RoPE for better extrapolation. Short convolutions are applied post-key and value projections, enhancing the model\’s ability to handle long-range dependencies.
 
 ```mermaid
 flowchart LR
-    A[User Query] --> B{Is Query Safe?}
-    B -->|Yes| C[Process Normally]
-    B -->|No| D[Refuse/Moderate]
-    C --> E[Generate Response]
-    E --> F[External Moderation Layer]
-    F --> G[Final Output]
-    style D fill:#f99,stroke:#333
-    style G fill:#9f9,stroke:#333
+    A[Text Input] --> B[Embedding Layer]
+    C[Image Input] -->|40x40 Patches| D[hMLP Encoder]
+    E[Audio Input] -->|dMel Spectrogram| D
+    D --> B
+    B --> F[MoE Decoder: 66 Layers]
+    F --> G[Output: UTF-8 Text]
 ```
 
+Multimodality in Inkling is **encoder-free**: images are divided into 40x40 pixel patches processed by a **4-layer hMLP**, while audio is converted to dMel spectrograms. Both are projected into a shared embedding space alongside text tokens, allowing the decoder to process them jointly. This streamlined approach avoids the complexity of separate encoders, making the model more efficient and easier to fine-tune.
 
----
+Inkling\’s **controllable thinking effort** is a game-changer for practical deployment. During reinforcement learning (RL), the model was trained to adjust its reasoning depth based on **per-token cost and system prompts**, effectively learning to allocate computational resources dynamically. Users can set the `reasoning_effort` parameter (e.g., `none`, `minimal`, `low`, `medium`, `high`, `xhigh`, `max`) to balance performance and cost. For instance, Inkling achieves **Terminal Bench 2.1 performance comparable to Nemotron 3 Ultra at just one-third the token cost**, making it highly efficient for enterprise use cases.
 
-### 4. Enterprise AI Sovereignty: Control Over the Agent Stack – Cohere’s and Amazon’s Perspectives
+Performance benchmarks reveal a competitive but nuanced profile. Inkling leads open-weights models on **FORTRESS Adversarial (78.0%)** and posts strong scores on **AIME 2026 (97.1%)** and **GPQA Diamond (87.2%)**. However, it trails **GLM-5.2** on **Terminal Bench 2.1 (63.8% vs. 82.7%)** and **SWEBench Verified (77.6% vs. 80.0%)**, highlighting areas for improvement. Notably, Inkling excels in **VoiceBench (91.4%)** and **MMMU Pro (73.5%)**, showcasing its multimodal strengths.
 
-As enterprises increasingly adopt AI, the concept of **AI sovereignty**—control over the full agent stack—has gained traction. **Cohere**, a leading AI lab, defines sovereignty as encompassing **data, AI models, infrastructure, and governance**. According to **Rachad Alao**, Cohere’s VP, this control is essential for **reducing vendor lock-in** and ensuring **alignment with enterprise values**.
+```python
+# Example: Running Inkling with Hugging Face Transformers
+from transformers import AutoModelForMultimodalLM, AutoProcessor
 
-Cohere’s approach includes:
-- **Model Routing**: Dynamically selecting the best model for a given task to optimize performance and cost.
-- **On-Premise Deployment**: Enabling enterprises to run models locally for **data privacy and compliance**.
-- **Multimodal Search**: Extending beyond text to include **images and documents**, enhancing retrieval-augmented generation (RAG) workflows.
+model_id = "thinkingmachines/Inkling"  # BF16, Hopper or later
+# model_id = "thinkingmachines/Inkling-NVFP4"  # NVFP4, Blackwell
+processor = AutoProcessor.from_pretrained(model_id)
+model = AutoModelForMultimodalLM.from_pretrained(
+    model_id, dtype="auto", device_map="auto"
+)
 
-Cohere’s **North Mini Code** and **Command A+** models exemplify this philosophy. North Mini Code is optimized for **cost-efficient coding tasks**, while Command A+ balances **performance and versatility** for enterprise use cases. By offering **task-specific models**, Cohere helps enterprises avoid the **"one-size-fits-all"** pitfalls of indiscriminate token consumption.
+messages = [
+    {
+        "role": "user",
+        "content": [
+            {"type": "audio", "audio": "support_call.wav"},  # 16kHz WAV
+            {"type": "text", "text": "Transcribe, then list every billing complaint."}
+        ]
+    }
+]
 
-Amazon, meanwhile, is tackling a different but equally critical challenge: **AI agent reliability**. At **VB Transform 2026**, **Bryan Silverthorn**, Director of AGI Autonomy at Amazon, argued that **reliability—not capability—** is the primary barrier to enterprise AI adoption. Citing Cisco data, he noted that **85% of enterprises are piloting AI agents**, but only **5% have deployed them in production**.
+inputs = processor.apply_chat_template(
+    messages,
+    add_generation_prompt=True,
+    tokenize=True,
+    return_dict=True,
+    return_tensors="pt",
+    reasoning_effort="medium"  # Controllable effort
+).to(model.device)
 
-Silverthorn’s framework for reliability comprises four dimensions:
-1. **Consistency**: Does the agent produce the same output for the same input?
-2. **Robustness**: Can it handle edge cases or adversarial inputs?
-3. **Predictability**: Are its failures understandable and manageable?
-4. **Safety**: Does it refuse harmful or unethical requests?
+outputs = model.generate(**inputs, max_new_tokens=2000, use_mtp=True)
+print(processor.decode(outputs[0][inputs["input_ids"].shape[-1]:]))
+```
 
-He illustrated the gap between internal evaluations and real-world performance with a case study: an agent deployed for **serial number extraction** from screens worked flawlessly for two months—until a **software update** caused it to intermittently misread numbers. The root cause? The **vision encoder’s behavior varied** based on the serial number’s screen position. This underscores the need for **rigorous, real-world testing** that accounts for **dimensions of variability**.
+Inkling\’s deployment flexibility is another strength. It supports **BF16 (2TB VRAM)** and **NVFP4 (600GB VRAM)** checkpoints, with runtimes available across **SGLang, vLLM, TokenSpeed, Unsloth, and Hugging Face Transformers**. For fine-tuning, Inkling is live on **Tinker** with 64K and 256K context options, and hosted APIs are available via **TogetherAI, Fireworks, Modal, Databricks, and Baseten**. This ecosystem readiness makes it a practical choice for enterprises looking to build **voice-and-vision agents, cost-tiered pipelines, or domain-specific fine-tuned models**.
 
-Amazon’s solution involves a **cultural shift**. Internally, agents are treated like **"interns"**—capable but occasionally error-prone. Silverthorn advocates for **management strategies** over pure technical fixes: asking agents to **self-identify potential failures**, adding **backup systems**, and consciously accepting **calibrated risk**. For example, Amazon’s AGI lab allows agents to **run experiments autonomously**, accepting occasional mistakes in exchange for **research velocity**.
-
-For enterprises, the takeaway is clear: **stop asking if your agent can do something impressive once; start asking if it can do it correctly a thousand times in a row**.
-
-
----
-
-### 5. AI Agent Reliability: The Enterprise Challenge – Amazon’s AGI Autonomy Framework
-
-Silverthorn’s insights reveal a **paradigm shift** in enterprise AI. Traditional benchmarks, which measure **peak capability**, are insufficient for production deployments. Instead, enterprises must prioritize **repeatability and reliability**.
-
-A **VentureBeat survey** found that **50% of companies** shipped agents that passed internal evaluations but **failed in real-world scenarios**. This discrepancy arises because most enterprises **default to vendor-provided evaluations**, which often overlook **application-specific risks**.
-
-Amazon’s **AGI Autonomy Framework** provides a roadmap for addressing these challenges:
-- **Identify Dimensions of Variability**: Understand what factors (e.g., input format, environmental changes) could cause the agent to fail.
-- **Match Measurement Rigor to Stakes**: High-risk applications (e.g., healthcare, finance) require **more stringent testing** than low-stakes tasks.
-- **Embrace the "Intern" Metaphor**: Treat agents as **junior employees**—powerful but requiring oversight.
-
-Practical steps for enterprises include:
-1. **Adopt LLM-as-Judge Techniques**: Use AI to evaluate AI, but supplement with **human-in-the-loop validation**.
-2. **Implement Redundancy**: Deploy **backup agents or fallback mechanisms** for critical tasks.
-3. **Monitor Continuously**: Track **accuracy, not just uptime**, to catch silent failures.
-
-Silverthorn also stressed that **computer use** (e.g., browser automation) will remain a core focus, but future agents will **integrate multiple tools** (e.g., MCP, APIs) to complete end-to-end workflows. For example, Amazon is already using agents to **stitch together warranty claims** across fragmented systems for a commercial trucking customer.
-
-The ultimate goal? **Autonomous but accountable AI**—systems that can operate independently while providing **transparency, explainability, and control**.
+However, Inkling is not without limitations. It **trails closed models** like GLM-5.2 and Kimi K2.6 on several benchmarks, and its **BF16 variant requires substantial VRAM**. Additionally, **Inkling-Small (276B parameters)** weights are not yet released, and the model lacks **audio or image output capabilities**. Despite these trade-offs, Inkling\’s open-source nature, multimodal input support, and controllable reasoning make it a compelling foundation for custom AI solutions.
 
 
----
+### Agentic Orchestration: The Enterprise AI Revolution and Its Gaps
 
-### 6. Conclusion: The Path Forward for Open-Source AI and Enterprise Adoption
+The third pillar of this AI frontier is **enterprise agentic orchestration**, where a recent **VentureBeat Pulse Research survey** of 101 enterprises reveals a stark disconnect between ambition and reality. While enterprises are rapidly consolidating onto **model-provider platforms**—with **Anthropic\’s Claude leading at 40%**, followed by Microsoft (18%) and OpenAI (13%)—the majority of deployed \"agents\" are still **chatbot wrappers**, not true multi-step orchestrated workflows.
 
-Thinking Machines’ **Inkling** represents a **watershed moment** for open-source AI. By combining **native multimodality, controllable reasoning, and censorship resistance** under a **permissive Apache 2.0 license**, Inkling offers enterprises a **rare blend of flexibility, control, and performance**. Its **sparse MoE architecture** and **controllable thinking effort** demonstrate that **efficiency and capability** are not mutually exclusive.
+The survey highlights that **model gravity**—the pull of a state-of-the-art base model—is the primary driver for platform selection (21% of respondents). Enterprises prioritize **reliable multi-step execution** (32%) and **workflow management** (28%) as success metrics, yet **71% admit that a quarter or fewer of their agents are genuinely orchestrated**. Only **10% have crossed the 50% mark**, exposing a **\"chatbot trap\"** where most deployments are single-prompt assistants masquerading as agents.
 
-Cohere and Amazon’s contributions further highlight the **strategic imperatives** for enterprise AI:
-- **Sovereignty**: Control over the **full agent stack** (data, models, infrastructure) is essential for **trust and compliance**.
-- **Reliability**: **Consistency, robustness, and safety** must take precedence over raw capability in production deployments.
+```mermaid
+pie
+    title Enterprise Agent Orchestration Platforms
+    "Anthropic Claude" : 40
+    "Microsoft" : 18
+    "OpenAI" : 13
+    "Google" : 8
+    "Amazon" : 7
+    "LangChain/LangGraph" : 5
+    "Custom In-House" : 4
+    "Other/None" : 5
+```
 
-For readers looking to leverage these innovations, the path forward is clear:
-1. **Experiment with Inkling**: Deploy it **on-premise or in private clouds** to test its multimodal and reasoning capabilities.
-2. **Adopt a Sovereignty Mindset**: Evaluate tools based on **control and transparency**, not just performance.
-3. **Prioritize Reliability**: Shift from **benchmarking capability** to **testing repeatability** in real-world scenarios.
+This gap is shaping enterprise strategies. Over the next 12 months, **25% plan to build in-house control planes**, **24% will standardize on one framework**, and **23% aim to move agents from sandbox to production**. Investment priorities reflect this: **34% are allocating budgets to workflow tooling**, followed by **security/permissions (25%)** and **scaling infrastructure (20%)**. However, **fiscal control remains reactive**: **27% have no real-time way to stop runaway agents**, and **32% rely solely on native platform caps**, which may not be sufficient for deterministic cost management.
 
-The future of AI lies in **open, adaptable, and accountable systems**. With models like Inkling and frameworks from Cohere and Amazon, enterprises now have the tools to **democratize access to cutting-edge AI** while maintaining **control, safety, and efficiency**. The revolution has begun—**will your organization be part of it?**
+The **hybrid control plane** is emerging as the dominant architecture, with **51% of enterprises expecting to split control between providers and their own layers by end-2026**. The primary motivation is **avoiding vendor lock-in (35%)**, followed by concerns over **security/permissioning (28%)** and **inflexibility (21%)**. This hybrid approach allows enterprises to leverage the strengths of model-provider platforms while retaining ownership of critical control logic.
+
+The survey also reveals a **size-based disparity**: **77% of smaller enterprises** (<2,500 employees) have <=25% orchestrated agents, compared to **62% of larger enterprises**. Similarly, **34% of smaller enterprises** lack real-time fiscal control, vs. **20% of larger ones**. This suggests that **mid-market organizations are lagging in both agent maturity and cost governance**, potentially due to resource constraints or less mature AI strategies.
+
+The **bottom line** is clear: enterprises have a **deployment problem, not a platform problem**. The orchestration layer—platforms, budgets, control architectures—is being built **ahead of the orchestrated portfolio** it is meant to support. The question now is whether enterprises can **close the gap between ambition and reality**, or if the chatbot trap will persist as a stubborn roadblock to true agentic AI.
+
+
+### Final Thoughts: The Convergence of Safety, Multimodality, and Orchestration
+
+The advancements in **GPT-Red**, **Inkling**, and **enterprise agentic orchestration** paint a vivid picture of AI\’s rapidly evolving landscape. GPT-Red\’s self-improving red-teaming demonstrates how **safety can scale alongside capability**, while Inkling\’s multimodal MoE architecture and controllable reasoning effort highlight the **democratization of customizable, high-performance AI**. Meanwhile, the VentureBeat survey underscores the **practical challenges** of deploying agentic systems at scale, revealing a gap between enterprise ambition and operational reality.
+
+As these innovations mature, their **synergies become apparent**. A model like Inkling, with its open weights and multimodal inputs, could benefit from **GPT-Red-style adversarial training** to enhance its robustness against prompt injections. Similarly, enterprises deploying **orchestrated agents** could leverage **Inkling\’s controllable effort** to optimize cost and performance, while using **GPT-Red-inspired red-teaming** to ensure safety in production environments.
+
+The future of AI will likely be defined by **three converging trends**:
+1. **Self-improving safety systems** like GPT-Red, which use today\’s models to harden tomorrow\’s defenses.
+2. **Customizable, multimodal foundations** like Inkling, which empower developers to build tailored solutions without sacrificing performance.
+3. **Hybrid, enterprise-grade orchestration**, where control planes balance flexibility, security, and cost efficiency.
+
+Together, these advancements are not just reshaping AI—they are **redefining what is possible**, from safer, more aligned models to multimodal agents that can reason across text, images, and audio. The journey from **chatbot wrappers to true agentic orchestration** will be long, but the tools and insights emerging today are lighting the way.
 
 Written with [Argos](https://github.com/Neilstid/argos)
