@@ -90,10 +90,11 @@ work:
     date_start: 2026-02-09
     date_end: ''
     summary: |
-      Bringing SOTA AI (agentic AI, computer vision, synthetic data, ...) for Naval Group
+      Bringing SOTA AI (agentic AI, computer vision, synthetic data, ...) for Naval Group:
       - Technical watch of latest AI technologies (Agentic AI, World Model, Diffusion Model, RAG, ...) 
       - Experimentation and Implementation of AI technologies (Reinforcement Learning, Agentic System, Computer Vision, Vision Langage Model, ...)
-      - Exploration of disruptive technologies and implementing POC to prove the value of 
+      - Exploration of disruptive technologies and implementing from POC to MVP to prove the value of technologies and systems
+      - Identifying new actors to partner with in order to bring SOTA AI in Naval Group
   - position: Ph.D Canditate
     company_name: Chanel, Pantin, France
     company_url: ''

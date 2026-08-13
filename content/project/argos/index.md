@@ -1,7 +1,7 @@
 ---
 title: Argos
 date: 2026-06-20
-external_link: https://github.com/Neilstid/argos
+# external_link: https://github.com/Neilstid/argos
 tags:
   - Python
   - LLM
@@ -95,3 +95,5 @@ When main.py runs:
 ---
 
 # Changelog
+
+**12/08/2026**: Adding AI generated banner for blog articles using open-routers models.
