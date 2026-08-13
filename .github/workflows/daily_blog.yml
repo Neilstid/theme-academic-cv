@@ -31,7 +31,8 @@ jobs:
         working-directory: scripts/argos
         run: uv run main.py --config app/feeds/ai_research.yaml --output-type blogcast  --output ../../content/post/daily_ai/daily_ai_{date}.md --include-images --bundle --image-model krea/krea-2-medium-turbo
         env:
-          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }} 
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
 
       - name: Commit et Push des modifications
         run: |
