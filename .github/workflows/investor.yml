@@ -1,4 +1,4 @@
-name: Daily Blog Generator
+name: Investment Agent Pipeline
 
 on:
   schedule:
