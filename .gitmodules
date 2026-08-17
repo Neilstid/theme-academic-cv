@@ -1,3 +1,6 @@
 [submodule "scripts/argos"]
 	path = scripts/argos
 	url = https://github.com/Neilstid/argos
+[submodule "scripts/tyche"]
+	path = scripts/tyche
+	url = https://github.com/Neilstid/tyche
