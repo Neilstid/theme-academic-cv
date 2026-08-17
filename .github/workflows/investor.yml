@@ -1,0 +1,37 @@
+name: Daily Blog Generator
+
+on:
+  schedule:
+    - cron: '0 15 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          submodules: recursive
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Set up Python"
+        uses: actions/setup-python@v6
+        with:
+          python-version-file: "scripts/argos/.python-version"
+
+      - name: "Install uv"
+        uses: astral-sh/setup-uv@v5 # v8.1.0
+
+      - name: "Set up Python"
+        working-directory: scripts/argos
+        run: uv sync --locked --all-extras --dev
+
+      - name: "run script"
+        working-directory: scripts/argos
+        run: uv run main.py --mode paper_trading
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
