@@ -18,17 +18,17 @@ jobs:
       - name: "Set up Python"
         uses: actions/setup-python@v6
         with:
-          python-version-file: "scripts/argos/.python-version"
+          python-version-file: "scripts/tyche/.python-version"
 
       - name: "Install uv"
         uses: astral-sh/setup-uv@v5 # v8.1.0
 
       - name: "Set up Python"
-        working-directory: scripts/argos
+        working-directory: scripts/tyche
         run: uv sync --locked --all-extras --dev
 
       - name: "run script"
-        working-directory: scripts/argos
+        working-directory: scripts/tyche
         run: uv run main.py --mode paper_trading
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
